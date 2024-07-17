@@ -1,4 +1,4 @@
-class MerchantController < ApplicationController
+class MerchantsController < ApplicationController
   def index
     conn = Faraday.new(url: 'http://localhost:3000/api/v1') do |faraday|
       faraday.headers['Content-Type'] = 'application/json'
