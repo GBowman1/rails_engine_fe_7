@@ -6,4 +6,18 @@ class EngineFacade
       Merchant.new(merchant_data)
     end
   end
+
+  def self.get_merchant_items(merchant_id)
+    json = EngineService.get_merchant_items(merchant_id)
+
+    json[:data].map do |item_data|
+      Item.new(item_data)
+    end
+  end
+
+  def self.get_merchant(merchant_id)
+    json = EngineService.get_merchant(merchant_id)
+
+    Merchant.new(json[:data])
+  end
 end

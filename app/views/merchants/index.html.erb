@@ -2,7 +2,7 @@
     <h1>Merchants</h1>
     <ul>
         <% @merchants.each_with_index do |merchant, index| %>
-        <li id="ID_<%=index + 1%>"><%= link_to merchant.name, merchant_path(merchant) %></li>
+        <li id="ID_<%=index + 1%>"><%= link_to merchant.name, merchant_path(merchant.id) %></li>
         <% end %>
     </ul>
 </div>

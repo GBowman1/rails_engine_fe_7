@@ -1,0 +1,6 @@
+<h1> <%= @merchant.name %> </h1>
+<ul>
+    <% @items.each_with_index do |item, index| %>
+    <li id="item_<%=index + 1%>"><%= item.name %></li>
+    <% end %>
+</ul>

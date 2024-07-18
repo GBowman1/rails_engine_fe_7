@@ -3,8 +3,6 @@ require 'rails_helper'
 RSpec.describe "Merchant Index Page", type: :feature do
   before :each do
     @all_merchants = File.read('./spec/fixtures/all_merchants_fixture.json')
-
-    # stub_request(:get, "http://localhost:3000/api/v1/merchants").to_return(status: 200, body: @all_merchants, headers: {})
     stub_request(:get, "http://localhost:3000/merchants").
           with(
             headers: {
@@ -28,4 +26,5 @@ RSpec.describe "Merchant Index Page", type: :feature do
       end
     end
   end
+
 end
