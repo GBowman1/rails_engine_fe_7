@@ -1,0 +1,7 @@
+<ul id="item_list">
+    <% @items.each_with_index do |item, index|%>
+        <li id="item_<%=index + 1%>">
+            <%= link_to item.name, item_path(item.id) %>
+        </li>
+    <% end %>
+</ul>

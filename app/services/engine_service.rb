@@ -22,4 +22,16 @@ class EngineService
 
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.get_all_items
+    response = conn.get('/items')
+
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.get_item(item_id)
+    response = conn.get("/items/#{item_id}")
+
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
