@@ -4,7 +4,7 @@ RSpec.describe "Items Show Page", type: :feature do
   before :each do
     @item = File.read('./spec/fixtures/item_fixture.json')
 
-    stub_request(:get, "http://localhost:3000/items/4").
+    stub_request(:get, "http://localhost:3000/api/v1/items/4").
           with(
             headers: {
             'Accept'=>'*/*',

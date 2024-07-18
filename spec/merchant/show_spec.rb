@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "Merchant Show Page", type: :feature do
   before :each do
     @all_merchants = File.read('./spec/fixtures/all_merchants_fixture.json')
-stub_request(:get, "http://localhost:3000/merchants").
+stub_request(:get, "http://localhost:3000/api/v1/merchants").
       with(
         headers: {
         'Accept'=>'*/*',
@@ -14,7 +14,7 @@ stub_request(:get, "http://localhost:3000/merchants").
       to_return(status: 200, body: @all_merchants, headers: {})
 
     @merchant_items = File.read('./spec/fixtures/merchant_items_fixture.json')
-    stub_request(:get, "http://localhost:3000/merchants/1/items").
+    stub_request(:get, "http://localhost:3000/api/v1/merchants/1/items").
       with(
         headers: {
               'Accept'=>'*/*',
@@ -25,7 +25,7 @@ stub_request(:get, "http://localhost:3000/merchants").
       to_return(status: 200, body: @merchant_items, headers: {})
 
     @merchant = File.read('./spec/fixtures/merchant_fixture.json')
-    stub_request(:get, "http://localhost:3000/merchants/1").
+    stub_request(:get, "http://localhost:3000/api/v1/merchants/1").
           with(
             headers: {
             'Accept'=>'*/*',

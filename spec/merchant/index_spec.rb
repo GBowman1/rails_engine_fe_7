@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Merchant Index Page", type: :feature do
   before :each do
     @all_merchants = File.read('./spec/fixtures/all_merchants_fixture.json')
-    stub_request(:get, "http://localhost:3000/merchants").
+    stub_request(:get, "http://localhost:3000/api/v1/merchants").
           with(
             headers: {
             'Accept'=>'*/*',
